@@ -1,18 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:id="@+id/activity_main"
+    android:id="@+id/view_a"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@android:color/background_light"
     tools:context="com.takescoop.androidviewmeasurement.MainActivity">
 
     <TextView
+        android:id="@+id/layout_a_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:layout_margin="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="View A"/>
+
+    <LinearLayout
+        android:id="@+id/view_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_a_title"
+        android:orientation="vertical"
+        android:background="@android:color/holo_blue_light"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="View B"/>
+
+        <TextView
+            android:id="@+id/view_c"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="View C"/>
+
+        <Button
+            android:id="@+id/update_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Update"/>
+
+        <Button
+            android:id="@+id/show_dialog_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Show Dialog"/>
+    </LinearLayout>
 </RelativeLayout>
