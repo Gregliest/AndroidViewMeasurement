@@ -29,6 +29,9 @@ public class MainActivity extends Activity {
     @BindView(R.id.view_b) LinearLayout viewB;
     @BindView(R.id.view_c) TextView viewC;
 
+    @BindView(R.id.hidden_view) TextView hiddenView;
+    @BindView(R.id.partially_hidden) TextView partiallyHiddenView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,7 +75,7 @@ public class MainActivity extends Activity {
         viewA.getGlobalVisibleRect(viewAGlobalRect);
         viewB.getGlobalVisibleRect(viewBGlobalRect);
         viewC.getGlobalVisibleRect(viewCGlobalRect);
-        
+
         Rect viewALocalRect = new Rect();
         Rect viewBLocalRect = new Rect();
         Rect viewCLocalRect = new Rect();
@@ -84,11 +87,22 @@ public class MainActivity extends Activity {
                 + ", ViewB: " + Arrays.toString(viewBLocationInWindow) + ", ViewC: " + Arrays.toString(viewCLocationInWindow));
         Log.d(TAG, "printViewPositions LocationOnScreen() ViewA: " + Arrays.toString(viewALocationOnScreen)
                 + ", ViewB: " + Arrays.toString(viewBLocationOnScreen) + ", ViewC: " + Arrays.toString(viewCLocationOnScreen));
-        Log.d(TAG, "printViewPositions GetX(), GetY() ViewA: " + Ax +"," + Ay
-                + ", ViewB: " + Bx +"," + By + ", ViewC: " + Cx +"," + Cy);
+        Log.d(TAG, "printViewPositions GetX(), GetY() ViewA: " + Ax + "," + Ay
+                + ", ViewB: " + Bx + "," + By + ", ViewC: " + Cx + "," + Cy);
         Log.d(TAG, "printViewPositions GlobalRect ViewA: " + viewAGlobalRect + ", ViewB: " + viewBGlobalRect + ", ViewC " + viewCGlobalRect);
         Log.d(TAG, "printViewPositions LocalRect ViewA: " + viewALocalRect + ", ViewB: " + viewBLocalRect + ", ViewC " + viewCLocalRect);
 
+        Rect hiddenGlobalRect = new Rect();
+        Rect partiallyHiddenGlobalRect = new Rect();
+        Rect hiddenLocalRect = new Rect();
+        Rect partiallyHiddenLocalRect = new Rect();
+        Log.d(TAG, "printViewPositions hidden global" + hiddenView.getGlobalVisibleRect(hiddenGlobalRect));
+        Log.d(TAG, "printViewPositions hidden local" + hiddenView.getLocalVisibleRect(hiddenLocalRect));
+        Log.d(TAG, "printViewPositions partially hidden global" + partiallyHiddenView.getGlobalVisibleRect(partiallyHiddenGlobalRect));
+        Log.d(TAG, "printViewPositions partially hidden global" + partiallyHiddenView.getLocalVisibleRect(partiallyHiddenLocalRect));
+
+        Log.d(TAG, "printViewPositions GlobalRect hidden: " + hiddenGlobalRect + ", partially hidden: " + partiallyHiddenGlobalRect);
+        Log.d(TAG, "printViewPositions LocalRect hidden: " + hiddenLocalRect + ", partially hidden: " + partiallyHiddenLocalRect);
     }
 
     @OnClick(R.id.update_button)

@@ -9,12 +9,33 @@
     tools:context="com.takescoop.androidviewmeasurement.MainActivity">
 
     <TextView
+        android:id="@+id/hidden_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="20dp"
+        android:background="@android:color/holo_red_dark"
+        android:text="Hide"/>
+
+    <TextView
+        android:id="@+id/partially_hidden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:background="@android:color/holo_orange_light"
+        android:text="Partially Hidden"/>
+
+    <TextView
         android:id="@+id/layout_a_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:padding="20dp"
+        android:background="@android:color/white"
         android:text="View A"/>
 
     <LinearLayout
@@ -22,9 +43,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/layout_a_title"
-        android:orientation="vertical"
+        android:layout_margin="20dp"
         android:background="@android:color/holo_blue_light"
-        android:layout_margin="20dp">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -36,12 +57,12 @@
             android:id="@+id/view_c"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginBottom="40dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginTop="50dp"
             android:background="@android:color/holo_green_dark"
+            android:padding="20dp"
             android:text="View C"/>
 
         <Button
